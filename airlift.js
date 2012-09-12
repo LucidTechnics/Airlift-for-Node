@@ -3,9 +3,11 @@ var server = require("./lib/server");
 
 exports.start = function(_config)
 {
+	var config = _config ||{};
+	
 	if (cluster.isMaster)
 	{
-		var totalProcesses = _config.totalProcesses || (require('os').cpus().length * 4);
+		var totalProcesses = config.totalProcesses || (require('os').cpus().length * 4);
 
 		console.log('Instantiating', totalProcesses, 'processe(s)');
 
@@ -18,9 +20,9 @@ exports.start = function(_config)
 		{
 			console.log('Worker', _worker.pid,'died ...');
 
-			if (_config.restartWorker)
+			if (config.restartWorker)
 			{
-				_config.restartWorker(_worker);
+				config.restartWorker(_worker);
 			}
 			else
 			{
@@ -32,6 +34,6 @@ exports.start = function(_config)
 	}
 	else
 	{
-		server.start(_config);
+		server.start(config);
 	}
 };
