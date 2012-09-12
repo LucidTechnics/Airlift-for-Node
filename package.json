@@ -1,0 +1,26 @@
+{
+	"name": "airlift",
+
+	"description": "AirLift-for-Node is a code generation framework for node.js.  It draws inspiration from the original Airlift for Google's App Engine.",
+	"main": "./airlift",
+	"author": "Bediako George <bediako.george@lucidtechnics.com>",
+	"version": "0.1.0",
+	"maintainers": [
+		{
+			"name": "Bediako George",
+			"email": "bediako.george@lucidtechnics.com",
+			"web": "http://www.lucidtechnics.com"
+		}
+	],
+	"repository" : { "type" : "git" , "url" : "http://github.com/LucidTechnics/Airlift-for-Node.git" },
+	"bugs" : { "url" : "http://github.com/LucidTechnics/Airlift-for-Node/issues" },
+	"licenses" :[
+		{
+			"type" : "MIT",
+			"url" : "http://github.com/LucidTechnics/Airlift-for-Node/raw/master/LICENSE"
+		}
+	],
+	"dependencies": {
+		"connect": ">= 2.4.5"
+	}
+}
