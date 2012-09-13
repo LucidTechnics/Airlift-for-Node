@@ -21,6 +21,7 @@
 		}
 	],
 	"dependencies": {
-		"connect": ">= 2.4.5"
+		"connect": ">= 2.4.5",
+		"dictation": ">= 0.1.0"
 	}
 }
