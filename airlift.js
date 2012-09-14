@@ -84,7 +84,7 @@ exports.generate = function(_config)
 	{
 		console.log('Considering', resource.name, '...');
 		
-		if (filter.isEmpty() === true || (filter.isEmpty() === false && filter[resource] === true))
+		if (_.isEmpty(filter) === true || (_.isEmpty(filter) === false && filter[resource] === true))
 		{
 			_.each(generators, function(_generator, _name)
 			{
