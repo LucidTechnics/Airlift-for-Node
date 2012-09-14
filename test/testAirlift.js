@@ -1,3 +1,4 @@
 var airlift = require('airlift');
+var resources = require('resource');
 
-airlift.start();
+airlift.start({validResources: resources});

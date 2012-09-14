@@ -22,6 +22,9 @@
 	],
 	"dependencies": {
 		"connect": ">= 2.4.5",
-		"dictation": ">= 0.1.0"
+		"dictation": ">= 0.1.0",
+		"underscore": "", 
+		"underscore.string": "",
+		"commander": ""
 	}
 }

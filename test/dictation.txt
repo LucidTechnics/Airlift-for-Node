@@ -1,0 +1,11 @@
+A Person is abstract
+has a name
+has an age which is not required and has type integer
+
+A Big Person has properties from a Person
+has a waist which has minimum value 50
+
+A Tall Person has properties from a Person
+has a height which has minimum value 6
+
+A Big Tall Person has properties from a Big Person and a Tall Person
