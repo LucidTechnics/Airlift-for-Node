@@ -82,7 +82,7 @@ exports.generate = function(_config)
 
 	for (var resource in resourceMap)
 	{
-		console.log('Considering', resource.name '...');
+		console.log('Considering', resource.name, '...');
 		
 		if (filter.isEmpty() === true || (filter.isEmpty() === false && filter[resource] === true))
 		{
