@@ -1,7 +1,8 @@
 var airlift = require('airlift');
+var fileSystem = require('fs');
 
-fs.readFile('./dictation.txt', function (_error, _dictation)
+fileSystem.readFile('./test/dictation.txt', function (_error, _dictation)
 {
 	if (_error) throw _error;
-	airlift.generate({filter: {}, generators: {}, dictation: _dictation});
+	airlift.generate({filter: {}, generators: {}, dictation: _dictation.toString()});
 });

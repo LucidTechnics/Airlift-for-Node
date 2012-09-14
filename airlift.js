@@ -1,5 +1,6 @@
 var cluster = require('cluster');
 var server = require('./lib/server');
+var _ = require('underscore');
 
 exports.start = function(_config)
 {
