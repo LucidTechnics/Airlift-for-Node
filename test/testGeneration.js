@@ -14,5 +14,5 @@ var generators = {
 fileSystem.readFile('./test/dictation.txt', function (_error, _dictation)
 {
 	if (_error) throw _error;
-	airlift.generate({filter: {}, generators: generators, dictation: _dictation.toString()});
+	airlift.generate({filter: {}, generators: {}, dictation: _dictation.toString()});
 });

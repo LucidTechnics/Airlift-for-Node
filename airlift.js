@@ -80,8 +80,10 @@ exports.generate = function(_config)
 	
 	var memory = {};
 
-	for (var resource in resourceMap)
+	for (var name in resourceMap)
 	{
+		var resource = resourceMap[name];
+		
 		console.log('Considering', resource.name, '...');
 		
 		if (_.isEmpty(filter) === true || (_.isEmpty(filter) === false && filter[resource] === true))
