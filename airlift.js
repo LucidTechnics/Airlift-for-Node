@@ -54,6 +54,9 @@ exports.generate = function(_config)
 			dependencyGraph[_ancestor.name][_name] = 1;
 		});
 	});
+
+	console.log('processing resources', resourceMap);
+	console.log('dependencies', dependencyGraph);
 	
 	var generators = _config.generators||{};
 
@@ -79,10 +82,13 @@ exports.generate = function(_config)
 
 	for (var resource in resourceMap)
 	{
+		console.log('Considering', resource.name '...');
+		
 		if (filter.isEmpty() === true || (filter.isEmpty() === false && filter[resource] === true))
 		{
 			_.each(generators, function(_generator, _name)
 			{
+				console.log(_name, 'generating ...');
 				memory[_name] = memory[_name]||{};
 				_generator.generate({resource: resource, resources: resourceMap, dependencies: dependencyGraph, memory: memory[_name]});
 			});
