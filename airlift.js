@@ -48,7 +48,7 @@ exports.generate = function(_config)
 
 	_.each(resourceMap, function(_resource, _name, _resourceMap)
 	{
-		_.each(_resource.ancestors, function(_ancestor)
+		_.each(_resource.ancestorList, function(_ancestor)
 		{
 			dependencyGraph[_ancestor.name] = dependencyGraph[_ancestor.name]||{};
 			dependencyGraph[_ancestor.name][_name] = 1;
