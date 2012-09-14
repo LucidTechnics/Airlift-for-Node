@@ -50,8 +50,8 @@ exports.generate = function(_config)
 	{
 		_.each(_resource.ancestorList, function(_ancestor)
 		{
-			dependencyGraph[_ancestor.name] = dependencyGraph[_ancestor.name]||{};
-			dependencyGraph[_ancestor.name][_name] = 1;
+			dependencyGraph[_ancestor] = dependencyGraph[_ancestor]||{};
+			dependencyGraph[_ancestor][_name] = 1;
 		});
 	});
 
