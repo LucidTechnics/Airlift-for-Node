@@ -45,6 +45,8 @@ exports.generate = function(_config)
 	var resourceMap = dictation.parse(_config.dictation||'');
 	var filter = _config.filter||{};
 	var dependencyGraph = {};
+	var targetDirectory = _config.targetDirectory||'./genjs';
+	var templateRoot = _config.templateRoot||'./templates';
 
 	_.each(resourceMap, function(_resource, _name, _resourceMap)
 	{
@@ -72,6 +74,7 @@ exports.generate = function(_config)
 		}
 	};
 
+	setupGenerator(generators, 'resource-list', require('./lib/generators/airlift-resource-list'));
 	setupGenerator(generators, 'resource', require('./lib/generators/airlift-resource'));
 	setupGenerator(generators, 'validation', require('./lib/generators/airlift-validation'));
 	setupGenerator(generators, 'persistence', require('./lib/generators/airlift-redis-persistence'));
@@ -81,6 +84,6 @@ exports.generate = function(_config)
 	_.each(generators, function(_generator, _name)
 	{
 		console.log(_name, 'generating ...');
-		_generator.generate({filter: filter, resources: resourceMap, dependencies: dependencyGraph});
+		_generator.generate({filter: filter, resources: resourceMap, dependencies: dependencyGraph, targetDirectory: targetDirectory});
 	});
 };

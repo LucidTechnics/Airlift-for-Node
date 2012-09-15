@@ -4,6 +4,7 @@ var fileSystem = require('fs');
 var generator = { generate: function() { console.log('generator called for') } };
 
 var generators = {
+'resources': generator,	
 'resource': generator,
 'validation': generator,
 'persistence': generator,
