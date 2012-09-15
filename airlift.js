@@ -77,23 +77,10 @@ exports.generate = function(_config)
 	setupGenerator(generators, 'persistence', require('./lib/generators/airlift-redis-persistence'));
 	setupGenerator(generators, 'html', require('./lib/generators/airlift-html'));
 	setupGenerator(generators, 'activerecord', require('./lib/generators/airlift-activerecord'));
-	
-	var memory = {};
 
-	for (var name in resourceMap)
+	_.each(generators, function(_generator, _name)
 	{
-		var resource = resourceMap[name];
-		
-		console.log('Considering', resource.name, '...');
-		
-		if (_.isEmpty(filter) === true || (_.isEmpty(filter) === false && filter[resource] === true))
-		{
-			_.each(generators, function(_generator, _name)
-			{
-				console.log(_name, 'generating ...');
-				memory[_name] = memory[_name]||{};
-				_generator.generate({resource: resource, resources: resourceMap, dependencies: dependencyGraph, memory: memory[_name]});
-			});
-		}
-	}
+		console.log(_name, 'generating ...');
+		_generator.generate({filter: filter, resource: resource, resources: resourceMap, dependencies: dependencyGraph});
+	});
 };
