@@ -84,6 +84,6 @@ exports.generate = function(_config)
 	_.each(generators, function(_generator, _name)
 	{
 		console.log(_name, 'generating ...');
-		_generator.generate({filter: filter, resources: resourceMap, dependencies: dependencyGraph, targetDirectory: targetDirectory});
+		_generator.generate({templateRoot: templateRoot, filter: filter, resources: resourceMap, dependencies: dependencyGraph, targetDirectory: targetDirectory});
 	});
 };
