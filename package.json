@@ -25,7 +25,7 @@
 		"dictation": ">= 0.1.0",
 		"underscore": "", 
 		"underscore.string": "",
-		"commander": ""
+		"commander": "",
 		"mu2": ""
 	}
 }
