@@ -1,3 +1,3 @@
 exports.map = {
-{{#resource-list}}{{.}}: 1,{{/resource-list}}
+{{#resource-list}}{{resourceName}},{{/resource-list}}
 };
